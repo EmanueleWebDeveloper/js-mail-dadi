@@ -43,20 +43,19 @@ function determinaVincitore() {
                   // ESERCIZIO 2 - Mail
 
 
-const email = [ "email1", "email2", "email3", "email4", "email5" ]
+                  const email = ["email1", "email2", "email3", "email4", "email5"];
 
-let posta = prompt( "inserisci la tua email")
-
-if ( posta === "email1" ){
-    document.writeln( "la tua mail è la email1")
-} else if (posta === "email2" ){
-    document.writeln( "la tua mail è la email1")
-}else if (posta === "email3" ){
-    document.writeln( "la tua mail è la email1")
-}else if (posta === "email4" ){
-    document.writeln( "la tua mail è la email1")
-}else if (posta === "email5" ){
-    document.writeln( "la tua mail è la email1")
-}else {
-    document.writeln( "la tua mail è errata")
-}
+                  let posta = prompt("Inserisci la tua email");
+                  let emailTrovata = false; 
+                  
+                  for (let i = 0; i < email.length; i++) {
+                      if (posta === email[i]) {
+                          document.writeln("La tua mail è la " + email[i]);
+                          emailTrovata = true;
+                          break; 
+                      }
+                  }
+                  
+                  if (!emailTrovata) {
+                      document.writeln("La tua mail è errata");
+                  }
