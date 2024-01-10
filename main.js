@@ -13,22 +13,31 @@
 // 4. torniamo a scrivere in italiano
 // 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 
-const risultatoHtml = document.getElementById("risultato")
-const bottoneHtml = document.getElementById("button")
-const bottone2Html = document.getElementById("button2")
+const risultatoHtml = document.getElementById("risultato");
+const bottoneHtml = document.getElementById("button");
+const bottone2Html = document.getElementById("button2");
+
+let risultatoPlayer1;
+let risultatoPlayer2;
 
 bottoneHtml.addEventListener("click", function() {
-    console.log(Math.floor(Math.random() * 7));
+    risultatoPlayer1 = Math.floor(Math.random() * 7);
+    console.log(risultatoPlayer1);
 });
 
 bottone2Html.addEventListener("click", function() {
-    console.log(Math.floor(Math.random() * 7));
+    risultatoPlayer2 = Math.floor(Math.random() * 7);
+    console.log(risultatoPlayer2);
+
+    determinaVincitore();
 });
 
-if (bottoneHtml > bottone2Html){
-    document.write('il vincitore è il player1 perchè il numero è piu alto')
-} else {
-    document.write('il vincitore è il player2 perchè il numero è piu alto')
+function determinaVincitore() {
+    if (risultatoPlayer1 > risultatoPlayer2) {
+        risultatoHtml.textContent = 'Il vincitore è il Player 1 perché il numero è più alto.';
+    } else if (risultatoPlayer1 < risultatoPlayer2) {
+        risultatoHtml.textContent = 'Il vincitore è il Player 2 perché il numero è più alto.';
+    } else {
+        risultatoHtml.textContent = 'È un pareggio!';
+    }
 }
-
-
