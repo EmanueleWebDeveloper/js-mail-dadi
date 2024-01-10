@@ -1,0 +1,34 @@
+// **Gioco dei dadi**
+// Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+// Stabilire il vincitore, in base a chi fa il punteggio più alto.
+
+// **Mail**
+// Chiedi all’utente la sua email,
+// controlla che sia nella lista di chi può accedere,
+// stampa un messaggio appropriato sull’esito del controllo.
+// **Consigli del giorno:**
+// 1. scriviamo sempre prima dei commenti in italiano per capire cosa vogliamo fare
+// 2. javascript non fa nulla da solo, dobbiamo dirgli noi cosa vogliamo fare
+// 3. si ma noi cosa vogliamo fare?
+// 4. torniamo a scrivere in italiano
+// 5. proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
+
+const risultatoHtml = document.getElementById("risultato")
+const bottoneHtml = document.getElementById("button")
+const bottone2Html = document.getElementById("button2")
+
+bottoneHtml.addEventListener("click", function() {
+    console.log(Math.floor(Math.random() * 7));
+});
+
+bottone2Html.addEventListener("click", function() {
+    console.log(Math.floor(Math.random() * 7));
+});
+
+if (bottoneHtml > bottone2Html){
+    document.write('il vincitore è il player1 perchè il numero è piu alto')
+} else {
+    document.write('il vincitore è il player2 perchè il numero è piu alto')
+}
+
+
